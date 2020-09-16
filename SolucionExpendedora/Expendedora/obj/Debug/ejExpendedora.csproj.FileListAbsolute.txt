@@ -1,0 +1,9 @@
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\bin\Debug\Expendedora.exe.config
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\bin\Debug\Expendedora.exe
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\bin\Debug\Expendedora.pdb
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\ejExpendedora.csprojAssemblyReference.cache
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\Expendedora.Properties.Resources.resources
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\ejExpendedora.csproj.GenerateResource.cache
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\ejExpendedora.csproj.CoreCompileInputs.cache
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\Expendedora.exe
+C:\Users\gcarranza\Documents\GitHub\Expendedora\SolucionExpendedora\Expendedora\obj\Debug\Expendedora.pdb
