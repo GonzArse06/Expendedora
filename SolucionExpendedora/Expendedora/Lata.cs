@@ -8,6 +8,7 @@ namespace ejExpendedora
 {
     class Lata
     {
+        const double litro = 1000;
         string _codigo, _nombre, _sabor;
         double _precio, _volumen;
 
@@ -48,6 +49,10 @@ namespace ejExpendedora
         public override string ToString()
         {
             return string.Format("{0}-{1} {2}",this._codigo,this._nombre,this._sabor);
+        }
+        public string GetLatasConMedidas()
+        {
+            return string.Format("{0}-{1} ${2} /  {3}L/$", this._nombre, this._sabor, this.Precio, this._volumen / litro);
         }
         
 

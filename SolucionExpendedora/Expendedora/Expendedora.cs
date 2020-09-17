@@ -36,7 +36,6 @@ namespace ejExpendedora
             else
             {
                 this._latas.Add(lata);
-                Console.WriteLine("Lata agregada ok.");
             }
         }
         public Lata ExtraerLata(string texto, double importe)
@@ -72,17 +71,26 @@ namespace ejExpendedora
 
         private void InicializarBebidas()
         {
-            this._latas.Add(new Lata("CO1", "Coca Cola", "Regular",10,10));
-            this._latas.Add(new Lata("CO2", "Coca Cola", "Zero",11,11));
-            this._latas.Add(new Lata("SP1", "Sprite", "Regular",12,11));
-            this._latas.Add(new Lata("SP1", "Sprite", "Zero",13,12));
-            this._latas.Add(new Lata("FA1", "Fanta", "Regular",13,13));
-            this._latas.Add(new Lata("FA2", "Fanta", "Zero",14,14));
+            this._latas.Add(new Lata("CO1", "Coca Cola", "Regular",10,220));
+            this._latas.Add(new Lata("CO2", "Coca Cola", "Zero",11, 220));
+            this._latas.Add(new Lata("SP1", "Sprite", "Regular",12, 220));
+            this._latas.Add(new Lata("SP1", "Sprite", "Zero",13, 220));
+            this._latas.Add(new Lata("FA1", "Fanta", "Regular",13, 220));
+            this._latas.Add(new Lata("FA2", "Fanta", "Zero",14, 220));
         }
-        public void Listado()
+        public string Listado()
         {
+            string retorno="";
             foreach (Lata a in _latas)
-                Console.WriteLine(a.ToString());
+                retorno += a.ToString()+"\n";
+            return retorno;
+        }
+        public string ListadoStock()
+        {
+            string retorno = "";
+            foreach (Lata a in _latas)
+                retorno += a.GetLatasConMedidas() + "\n";
+            return retorno;
         }
         public Lata BuscarLata(string cod)
         {

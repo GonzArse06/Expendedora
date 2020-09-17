@@ -36,7 +36,7 @@ namespace ejExpendedora
                         Console.WriteLine("Maquina encendida...");
                         break;
                     case 1:
-                        exp.Listado();
+                        Console.WriteLine(exp.Listado());
                         break;
                     case 2:
                         IngresarLata(exp);
@@ -59,7 +59,7 @@ namespace ejExpendedora
                 Console.ReadKey();
                 
             } while (_opcionMenu != 6);
-             
+            
         }
 
         static void IngresarLata(Expendedora exp)
@@ -69,7 +69,7 @@ namespace ejExpendedora
                 Console.WriteLine("Debe encender la maquina para hacer esta operacion.");
             else
             {
-                exp.Listado();
+                Console.WriteLine(exp.Listado());
                 lata = exp.BuscarLata(Validaciones.Texto("codigo").ToUpper());
                 if (lata == null)
                     throw new CodigoInvalidoException();
@@ -78,9 +78,11 @@ namespace ejExpendedora
                     try
                     {
                         double precio = Validaciones.Importe("precio");
-                        double volumen = Validaciones.Importe("volumen");
+                        double volumen = Validaciones.Importe("volumen en cc");
                         Lata auxLata = new Lata(lata.Codigo, lata.Nombre, lata.Sabor, precio, volumen);
                         exp.AgregarLata(auxLata);
+
+                        Console.WriteLine("Lata agregada ok.");
                     }
                     catch (CapacidadInsuficienteException)
                     {
@@ -141,7 +143,7 @@ namespace ejExpendedora
             else
             {
                 Console.WriteLine(exp.GetBalance());
-                exp.Listado();
+                Console.WriteLine(exp.Listado());
             }
 
         }
@@ -151,7 +153,7 @@ namespace ejExpendedora
                 Console.WriteLine("Debe encender la maquina para hacer esta operacion.");
             else
             {
-                exp.Listado();
+                Console.WriteLine(exp.ListadoStock());
             }
          }
     }
