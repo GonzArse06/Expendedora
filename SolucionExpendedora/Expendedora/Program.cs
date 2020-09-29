@@ -69,14 +69,15 @@ namespace ejExpendedora
                 Console.WriteLine("Debe encender la maquina para hacer esta operacion.");
             else
             {
-                Console.WriteLine(exp.Listado());
-                lata = exp.BuscarLata(Validaciones.Texto("codigo").ToUpper());
-                if (lata == null)
-                    throw new CodigoInvalidoException();
-                else
-                {                     
-                    try
+                try
+                {
+                    Console.WriteLine(exp.Listado());
+                    lata = exp.BuscarLata(Validaciones.Texto("codigo").ToUpper());
+                    if (lata == null)
+                        throw new CodigoInvalidoException();
+                    else
                     {
+
                         double precio = Validaciones.Importe("precio");
                         double volumen = Validaciones.Importe("volumen en cc");
                         Lata auxLata = new Lata(lata.Codigo, lata.Nombre, lata.Sabor, precio, volumen);
@@ -84,11 +85,15 @@ namespace ejExpendedora
 
                         Console.WriteLine("Lata agregada ok.");
                     }
-                    catch (CapacidadInsuficienteException)
-                    {
-                        Console.WriteLine("La capacidad esta llena. No se agrega producto.");
-                    }
                 }
+                catch (CodigoInvalidoException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (CapacidadInsuficienteException)
+                {
+                    Console.WriteLine("La capacidad esta llena. No se agrega producto.");
+                }                
             }
         }
         static void ExtraerLata(Expendedora exp)

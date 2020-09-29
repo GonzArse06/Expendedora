@@ -8,5 +8,7 @@ namespace ejExpendedora
 {
     class CodigoInvalidoException:Exception
     {
+        public CodigoInvalidoException() : base("El codigo ingresado es invalido. Se cancela operacion.")
+        { }
     }
 }
